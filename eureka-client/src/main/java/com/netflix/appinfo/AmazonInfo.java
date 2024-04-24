@@ -286,7 +286,7 @@ public class AmazonInfo implements DataCenterInfo, UniqueIdentifier {
     private Map<String, String> metadata;
 
     public AmazonInfo() {
-        this.metadata = new HashMap<String, String>();
+        this.metadata = new HashMap<>();
     }
 
     /**
@@ -353,14 +353,16 @@ public class AmazonInfo implements DataCenterInfo, UniqueIdentifier {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AmazonInfo)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AmazonInfo)) {
+            return false;
+        }
 
         AmazonInfo that = (AmazonInfo) o;
 
-        if (metadata != null ? !metadata.equals(that.metadata) : that.metadata != null) return false;
-
-        return true;
+        return !(metadata != null ? !metadata.equals(that.metadata) : that.metadata != null);
     }
 
     @Override

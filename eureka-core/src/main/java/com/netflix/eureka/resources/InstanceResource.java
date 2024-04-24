@@ -124,7 +124,7 @@ public class InstanceResource {
             // Store the overridden status since the validation found out the node that replicates wins
             if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode()
                     && (overriddenStatus != null)
-                    && !(InstanceStatus.UNKNOWN.name().equals(overriddenStatus))
+                    && !InstanceStatus.UNKNOWN.name().equals(overriddenStatus)
                     && isFromReplicaNode) {
                 registry.storeOverriddenStatusIfRequired(app.getAppName(), id, InstanceStatus.valueOf(overriddenStatus));
             }

@@ -39,7 +39,7 @@ public abstract class AbstractAzToRegionMapper implements AzToRegionMapper {
                 }
             });
 
-    private final Map<String, String> availabilityZoneVsRegion = new ConcurrentHashMap<String, String>();
+    private final Map<String, String> availabilityZoneVsRegion = new ConcurrentHashMap<>();
     private String[] regionsToFetch;
 
     protected AbstractAzToRegionMapper(EurekaClientConfig clientConfig) {
